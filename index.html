@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Logic Visual Cues</title>
+    <title>Logic Visual Cue</title>
     <style>
         body, html { 
             margin: 0; width: 100%; height: 100%; 
@@ -24,8 +24,8 @@
     <div id="screen">READY</div>
 
     <script>
-        // Vul hier straks het lokale IP-adres van je computer/server in
-        const wsServerUrl = 'ws://192.168.2.63:8080'; 
+        // Pakt automatisch het juiste IP en poort (192.168.2.63:8080)
+        const wsServerUrl = 'ws://' + window.location.host; 
         let ws;
 
         function connect() {
@@ -44,7 +44,7 @@
                     screen.style.color = "#000";
                     screen.innerText = "1";
                 } else if (data.triggered) {
-                    document.body.style.background = "#FFFFFF"; // Wit voor 8e/16e noten
+                    document.body.style.background = "#FFFFFF"; // Wit voor de tel
                     screen.style.color = "#000";
                     screen.innerText = ".";
                 } else {
